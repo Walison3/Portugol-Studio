@@ -37,6 +37,25 @@ inclua biblioteca Util
 			escreva(vetor[i] + " ") Util.aguarde(300)
 		}
 		escreva("\n")
+
+		//Busca binárias em vetores
+		inteiro chave, ini=0, meio=0, fim=Util.numero_elementos(vetor)-1
+
+		escreva("Quer achar qual qual valor? ") leia(chave)
+		encontrado = falso
+
+		enquanto(ini <= fim){
+			meio = (ini + fim) / 2
+			se(vetor[meio] == chave){
+				encontrado = verdadeiro
+				pare
+			} senao{
+				se(chave > vetor[meio]) ini = meio + 1
+				senao fim = meio - 1
+			}
+		}
+		se(encontrado) escreva("\nO valor " + chave + " foi encontrado na posição " + meio)
+		senao escreva("\nInfelizmente o valor " + chave + " não se encotra no vetor")
 	}
 }
 
@@ -45,9 +64,9 @@ inclua biblioteca Util
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 755; 
+ * @POSICAO-CURSOR = 923; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {vetor, 7, 10, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
